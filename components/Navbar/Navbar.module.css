@@ -1,0 +1,50 @@
+
+/* Hover underline effect */
+.hover_underline {
+  position: relative;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #27272a; /* fallback: text-zinc-800 */
+}
+
+.hover_underline:hover {
+  color: var(--color-primary-red); /* replace with your --primary value */
+}
+
+.hover_underline::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--color-primary-red); /* replace with your --primary */
+  transition: all 0.3s;
+  transform: translateX(-50%);
+}
+
+.hover_underline:hover::after {
+  width: 100%;
+}
+
+/* Selected/active underline (always visible) */
+.select_underline {
+  position: relative;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--color-primary-red); /* --primary */
+}
+
+.select_underline::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-primary-red); /* --primary */
+  transition: all 0.3s;
+  transform: translateX(-50%);
+}

@@ -1,0 +1,42 @@
+.gradientBorder {
+  position: relative;
+  overflow: hidden;
+  padding: 1.3px;
+  border-radius: 12px;
+}
+
+.gradientBorder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 200%;
+  background: linear-gradient(
+    115deg,
+    var(--color-primary-red),
+    var(--color-primary-red),
+    hotPink,
+    lightPink,
+    #44ce7b
+  );
+  background-size: 50% 100%;
+  z-index: 1;
+}
+
+.gradientBorder:hover::before {
+  animation: rainbowMove 0.75s linear infinite;
+}
+
+.gradientBorderContent {
+  position: relative;
+  z-index: 2;
+  background: #000;
+  border-radius: 10px;
+  padding: 1.5rem;
+  height: 100%;
+}
+
+@keyframes rainbowMove {
+  to {
+    transform: translateX(-50%);
+  }
+}
